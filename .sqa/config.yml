@@ -1,0 +1,52 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/kalininalab/alphafold_non_docker:
+      branch: main
+      repo: https://github.com/kalininalab/alphafold_non_docker
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/kalininalab/alphafold_non_docker git:
+        commands:
+        - /usr/bin/env sh .sqa/script.shaky-apricot-toad.sh
+        container: qc.acc_seedy-persimmon-tarsier
+  QC.Doc:
+    repos:
+      github.com/kalininalab/alphafold_non_docker find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.squeaky-rose-hyena.sh
+        container: qc.doc_crappy-puce-bee
+      github.com/kalininalab/alphafold_non_docker git:
+        commands:
+        - /usr/bin/env sh .sqa/script.lumpy-blue-jaguar.sh
+        container: qc.doc_skinny-plum-devil
+      github.com/kalininalab/alphafold_non_docker markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.foggy-silver-dormouse.sh
+        container: qc.doc_droopy-tomato-insect
+  QC.Lic:
+    repos:
+      github.com/kalininalab/alphafold_non_docker licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.seedy-saffron-moose.sh
+        container: qc.lic_fuzzy-teal-rabbit
+  QC.Sty:
+    repos:
+      github.com/kalininalab/alphafold_non_docker jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.lumpy-wheat-horse.sh
+        container: qc.sty_trippy-dandelion-tetra
+  QC.Ver:
+    repos:
+      github.com/kalininalab/alphafold_non_docker get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.hazy-mauve-chicken.sh
+        container: qc.ver_gloppy-lilac-cichlid
+timeout: 5400
