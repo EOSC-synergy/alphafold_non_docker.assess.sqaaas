@@ -15,38 +15,38 @@ sqa_criteria:
     repos:
       github.com/kalininalab/alphafold_non_docker git:
         commands:
-        - /usr/bin/env sh .sqa/script.shaky-apricot-toad.sh
-        container: qc.acc_seedy-persimmon-tarsier
+        - /usr/bin/env sh .sqa/script.slimy-chartreuse-spaniel.sh
+        container: qc.acc_tasty-violet-sponge
   QC.Doc:
     repos:
       github.com/kalininalab/alphafold_non_docker find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.squeaky-rose-hyena.sh
-        container: qc.doc_crappy-puce-bee
+        - /usr/bin/env sh .sqa/script.stuffy-persimmon-crab.sh
+        container: qc.doc_randy-pink-uakari
       github.com/kalininalab/alphafold_non_docker git:
         commands:
-        - /usr/bin/env sh .sqa/script.lumpy-blue-jaguar.sh
-        container: qc.doc_skinny-plum-devil
+        - /usr/bin/env sh .sqa/script.gamy-heliotrope-squid.sh
+        container: qc.doc_craggy-ivory-sparrow
       github.com/kalininalab/alphafold_non_docker markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.foggy-silver-dormouse.sh
-        container: qc.doc_droopy-tomato-insect
+        - /usr/bin/env sh .sqa/script.dorky-amaranth-sponge.sh
+        container: qc.doc_nippy-brass-angelfish
   QC.Lic:
     repos:
       github.com/kalininalab/alphafold_non_docker licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.seedy-saffron-moose.sh
-        container: qc.lic_fuzzy-teal-rabbit
+        - /usr/bin/env sh .sqa/script.stuffy-russet-newfoundland.sh
+        container: qc.lic_lumpy-salmon-octopus
   QC.Sty:
     repos:
       github.com/kalininalab/alphafold_non_docker jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.lumpy-wheat-horse.sh
-        container: qc.sty_trippy-dandelion-tetra
+        - /usr/bin/env sh .sqa/script.blurry-thistle-fowl.sh
+        container: qc.sty_surly-platinum-penguin
   QC.Ver:
     repos:
       github.com/kalininalab/alphafold_non_docker get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.hazy-mauve-chicken.sh
-        container: qc.ver_gloppy-lilac-cichlid
+        - /usr/bin/env sh .sqa/script.fuzzy-champagne-lion.sh
+        container: qc.ver_zippy-blue-javanese
 timeout: 5400
